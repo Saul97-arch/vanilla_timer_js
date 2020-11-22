@@ -15,6 +15,7 @@ let min = 0;
 let hora = 0;
 
 iniciar.addEventListener("click", () => {
+  clearInterval(initTimer);
   initTimer = setInterval(() => {
     sec++;
     relogio.innerHTML = `${zeroToLeft(hora)}:${zeroToLeft(min)}:${zeroToLeft(
