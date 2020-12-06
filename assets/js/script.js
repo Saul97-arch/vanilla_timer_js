@@ -1,3 +1,4 @@
+//Envolver tudo numa função
 const relogio = document.querySelector(".relogio");
 const iniciar = document.querySelector(".iniciar");
 const pausar = document.querySelector(".pausar");
@@ -13,7 +14,7 @@ let initTimer;
 let sec = 0;
 let min = 0;
 let hora = 0;
-
+//Usar e.target e classList para usar apenas um addEventListener
 iniciar.addEventListener("click", () => {
   clearInterval(initTimer);
   initTimer = setInterval(() => {
@@ -32,14 +33,12 @@ iniciar.addEventListener("click", () => {
     }
   }, 1000);
   relogio.classList.add("preto");
-  iniciar.disabled = true;
 });
 
 pausar.addEventListener("click", () => {
   clearInterval(initTimer);
   relogio.classList.add("vermelho");
   relogio.classList.remove("preto");
-  iniciar.disabled = false;
 });
 
 zerar.addEventListener("click", () => {
